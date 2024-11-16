@@ -1,0 +1,15 @@
+unlet! g:skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+if has('vim_starting')
+	" encoding, chaning encoding at runtime is undefined behavior
+	if &encoding !=? 'utf-8' | let &termencoding=&encoding | endif
+	set encoding=utf-8 fileencoding=utf-8 fileformats=unix,dos
+	set fileencodings=utf-8,iso-8859-1
+
+	set langmenu=en_US
+	let $LANG = 'en_US'
+	source $VIMRUNTIME/delmenu.vim
+	source $VIMRUNTIME/menu.vim
+endif
+
